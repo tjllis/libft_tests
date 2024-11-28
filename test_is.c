@@ -163,6 +163,22 @@ void	test_toupper()
     printf("Test 6: %c -> %c\n", '@', ft_toupper('@'));  // Expected: '@' -> '@'
 }
 
+void	test_atoi()
+{
+    printf("\nTesting atoi...\n");
+	const char *str1 = "  42";
+    const char *str2 = "  -123";
+    const char *str3 = "   +456";
+    const char *str4 = "123abc";
+	const char *str5 = "---+--+1234ab567";
+
+    printf("ft_atoi(str1) = %d\n", ft_atoi(str1));  // Output: 42
+    printf("ft_atoi(str2) = %d\n", ft_atoi(str2));  // Output: -123
+    printf("ft_atoi(str3) = %d\n", ft_atoi(str3));  // Output: 456
+    printf("ft_atoi(str4) = %d\n", ft_atoi(str4));  // Output: 123
+	printf("ft_atoi(str5) = %d\n", ft_atoi(str5)); // Output: 0
+}
+
 int main(void)
 {
     test_isalpha();
@@ -172,5 +188,6 @@ int main(void)
     test_isprint();
     test_tolower();
     test_toupper();
+    test_atoi();
     return (0);
 }
