@@ -141,6 +141,28 @@ void	test_isprint()
     }
 }
 
+void	test_tolower()
+{
+    printf("\nTesting tolower...\n");
+    printf("Test 1: %c -> %c\n", 'A', ft_tolower('A'));  // Expected: 'A' -> 'a'
+    printf("Test 2: %c -> %c\n", 'Z', ft_tolower('Z'));  // Expected: 'Z' -> 'z'
+    printf("Test 3: %c -> %c\n", 'a', ft_tolower('a'));  // Expected: 'a' -> 'a'
+    printf("Test 4: %c -> %c\n", 'z', ft_tolower('z'));  // Expected: 'z' -> 'z'
+    printf("Test 5: %c -> %c\n", '1', ft_tolower('1'));  // Expected: '1' -> '1'
+    printf("Test 6: %c -> %c\n", '@', ft_tolower('@'));  // Expected: '@' -> '@'
+}
+
+void	test_toupper()
+{
+    printf("\nTesting toupper...\n");
+	printf("Test 1: %c -> %c\n", 'a', ft_toupper('a'));  // Expected: 'a' -> 'A'
+    printf("Test 2: %c -> %c\n", 'z', ft_toupper('z'));  // Expected: 'z' -> 'Z'
+    printf("Test 3: %c -> %c\n", 'A', ft_toupper('A'));  // Expected: 'A' -> 'A'
+    printf("Test 4: %c -> %c\n", 'Z', ft_toupper('Z'));  // Expected: 'Z' -> 'Z'
+    printf("Test 5: %c -> %c\n", '1', ft_toupper('1'));  // Expected: '1' -> '1'
+    printf("Test 6: %c -> %c\n", '@', ft_toupper('@'));  // Expected: '@' -> '@'
+}
+
 int main(void)
 {
     test_isalpha();
@@ -148,5 +170,7 @@ int main(void)
     test_isalnum();
     test_isascii();
     test_isprint();
+    test_tolower();
+    test_toupper();
     return (0);
 }
