@@ -412,10 +412,13 @@ void	test_calloc()
     free(arr);
     void *i = ft_calloc(SIZE_MAX, SIZE_MAX);
 	void *i1 = ft_calloc(-5, -5);
+	void *i2 = ft_calloc(5, 0);
 	printf("result of ft_calloc(SIZE_MAX, SIZE_MAX): %ls\n", (unsigned int *)i);
 	printf("result of ft_calloc(-5, -5): %ls\n", (unsigned int *)i1);
+	printf("result of ft_calloc(5, 0): %ls\n", (unsigned int *)i2);
 	free(i);
 	free(i1);
+	free(i2);
 }
 
 void	test_strdup()
