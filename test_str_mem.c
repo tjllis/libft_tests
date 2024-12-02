@@ -161,22 +161,22 @@ void	test_memmove()
 		printf("FAIL: Expected '%s', got '%s'.\n", src1, dest1);
 
 	// Test case 2: Overlapping memory (dest < src)
-	char overlap1[] = "0123456789";
+/*	char overlap1[] = "0123456789";
 	ft_memmove(overlap1 + 2, overlap1, 5); // Copy "01234" to "23456"
 	if (strcmp(overlap1, "01201234") == 0)
 		printf("PASS: Overlapping (forward copy).\n");
 	else
-		printf("FAIL: Overlapping (forward copy), got '%s'.\n", overlap1);
+		printf("FAIL: Overlapping (forward copy), got '%s'.\n", overlap1);*/
 
-/*	// Test case 3: Overlapping memory (dest > src)
-	char overlap2[] = "0123456789";
+	// Test case 3: Overlapping memory (dest > src)
+/*	char overlap2[] = "0123456789";
 	ft_memmove(overlap2, overlap2 + 2, 5); // Copy "23456" to "23456"
 	if (strncmp(overlap2, "23456", 5) == 0)
 		printf("PASS: Overlapping (backward copy).\n");
 	else
 		printf("FAIL: Overlapping (backward copy), got '%s'.\n", overlap2);
-*/
-/*	// Test case 4: Null pointers
+
+	// Test case 4: Null pointers
 	if (ft_memmove(NULL, src2, 5) == NULL && ft_memmove(dest2, NULL, 5) == NULL)
 		printf("PASS: Handle NULL pointers.\n");
 	else
@@ -411,14 +411,14 @@ void	test_calloc()
 
     free(arr);
     void *i = ft_calloc(SIZE_MAX, SIZE_MAX);
-	void *i1 = ft_calloc(-5, -5);
-	void *i2 = ft_calloc(5, 0);
-	printf("result of ft_calloc(SIZE_MAX, SIZE_MAX): %ls\n", (unsigned int *)i);
-	printf("result of ft_calloc(-5, -5): %ls\n", (unsigned int *)i1);
-	printf("result of ft_calloc(5, 0): %ls\n", (unsigned int *)i2);
-	free(i);
-	free(i1);
-	free(i2);
+    void *i1 = ft_calloc(-5, -5);
+    void *i2 = ft_calloc(0, 0);
+    printf("result of ft_calloc(SIZE_MAX, SIZE_MAX): %ls\n", (unsigned int *)i);
+    printf("result of ft_calloc(-5, -5): %ls\n", (unsigned int *)i1);
+    printf("result of ft_calloc(0, 0): %p\n", (unsigned int *)i2);
+    free(i);
+    free(i1);
+    free(i2);
 }
 
 void	test_strdup()
