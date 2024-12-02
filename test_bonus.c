@@ -195,11 +195,13 @@ void test_lstlast()
 
 void test_lstdelone()
 {
+	t_list	*temp;
      printf("\nTesting ft_lstdelone...\n");
 
     // Step 1: Create a list with three nodes
     t_list *list = ft_lstnew(malloc(sizeof(int)));
     *(int *)list->content = 42;
+    
 
     list->next = ft_lstnew(malloc(sizeof(int)));
     *(int *)list->next->content = 56;
@@ -211,10 +213,11 @@ void test_lstdelone()
     printf("Initial list: ");
     print_list(list);
 
-    // Step 2: Delete the second node (56)
-    t_list *second_node = list->next; // Save a pointer to the second node
+    // // Step 2: Delete the second node (56)
+     t_list *second_node = list->next;
+     temp = list->next->next; // Save a pointer to the second node
     ft_lstdelone(second_node, del);   // Ensure `del` frees content
-    list->next = list->next->next;    // Fix the list after deletion
+    list->next = temp;   // Fix the list after deletion
     printf("After deleting second node: ");
     print_list(list); // Expected: 42 -> 99 -> NULL
 
